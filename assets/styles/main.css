@@ -1,5 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap");
+
+:root {
+  font-size: 62.5%;
+
+  --body-bg: rgba(36, 41, 67, 1);
+
+  --dark-blue: rgba(36, 41, 67, 1);
+  --light-blue: #9bf1ff;
+  --white: rgba(255, 255, 255, 1);
+}
+
+/* ===== GLOBAL ===== */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body,
+label,
+input,
+textarea,
+input::placeholder,
+textarea::placeholder {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+#header .logo,
+#header nav .menu {
+  font-weight: 600;
+}
+
+/* Screen Reader */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ===== DOCUMENT BODY ===== */
+body {
+  background-color: var(--body-bg);
+}
+
+/* ===== HEADER ===== */
+#header {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  height: 6rem;
+  z-index: 1000;
+}
+
+#header .logo {
+  padding: 0 2.2rem;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+#header .logo strong {
+  background-color: var(--white);
+  color: var(--dark-blue);
+  letter-spacing: 0.45rem;
+  padding: 0 0.2rem 0 0.5rem;
+  margin-right: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+#header .logo span {
+  color: var(--white);
+  letter-spacing: 0.45rem;
+  transition: color 0.2s ease;
+}
+
+#header .logo:hover strong {
+  background-color: var(--light-blue);
+}
+
+#header .logo:hover span {
+  color: var(--light-blue);
+}
+
+#header nav {
+  padding: 0 2.2rem 0 1rem;
+  height: inherit;
+}
+
+#header nav .menu {
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.45rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  transition: color 0.2s ease;
+}
+
+#header nav .menu:hover {
+  color: var(--light-blue);
+}
+
+#header nav .menu svg {
+  margin: 0 1rem 0 1rem;
+  transition: stroke 0.2s ease;
+}
+
+#header nav .menu:hover svg {
+  stroke: var(--light-blue);
 }
