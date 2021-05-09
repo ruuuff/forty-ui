@@ -6,18 +6,67 @@ const Options = {
 
 const CSSSelectors = [
   {
-    selector: ".logo a",
+    selector: "h1",
     propAndValue: [
-      { property: "font-size", min: 1.8, max: 2.8 },
-      { property: "line-height", min: 2, max: 3 }
+      { property: "font-size", min: 0, max: 6 },
+      { property: "line-height", min: 0, max: 10 }
     ]
-  }
+  },
+
+  {
+    selector: "h2, h3",
+    propAndValue: [
+      { property: "font-size", min: 0, max: 3.2 },
+      { property: "line-height", min: 0, max: 5.3 }
+    ]
+  },
+
+  {
+    selector: "#banner .content p, #first-section > article p",
+    propAndValue: [
+      { property: "font-size", min: 0, max: 1.3 },
+      { property: "line-height", min: 0, max: 2.1 },
+      { property: "letter-spacing", min: 0, max: 0.3 }
+    ]
+  },
+
+  {
+    selector: "#header a.logo, #header nav, .btn-container .btn, label",
+    propAndValue: [
+      { property: "font-size", min: 0, max: 1.5 },
+      { property: "line-height", min: 0, max: 2.4 }
+    ]
+  },
+
+  {
+    selector: "#secondary-section .container p, input, textarea, #contact section:last-child .content, .icon",
+    propAndValue: [
+      { property: "font-size", min: 0, max: 1.86 },
+      { property: "line-height", min: 0, max: 3.0 }
+    ]
+  },
+
+  {
+    selector: "#contact section:last-child header h3",
+    propAndValue: [
+      { property: "font-size", min: 0, max: 2.5 },
+      { property: "line-height", min: 0, max: 4.1 }
+    ]
+  },
+
+  {
+    selector: "footer .credits ul",
+    propAndValue: [
+      { property: "font-size", min: 0, max: 1.5 },
+      { property: "line-height", min: 0, max: 1.5 }
+    ]
+  },
 ]
 
 const SizeAdjust = {
   createStyleEl() {
     const styleEl = document.createElement('style')
-    document.getElementsByTagName('head')[0].appendChild(styleEl)
+    document.querySelector('head').appendChild(styleEl)
     styleEl.insertAdjacentHTML("beforebegin", "<!-- Style injected by SizeAdjust (github.com/ruuuff) -->")
   },
 
@@ -42,7 +91,7 @@ const SizeAdjust = {
       style.insertAdjacentHTML("beforeend", `${selector} {`)
 
       propAndValue.forEach(({ property, min, max }) => {
-        const size = SizeAdjust.callScaleWithParameters(Number(min), Number(max)).toFixed(2)
+        const size = SizeAdjust.callScaleWithParameters(min, max).toFixed(2)
 
         style.insertAdjacentHTML("beforeend", `  ${property}: ${size + Options.measure};`)
       })
