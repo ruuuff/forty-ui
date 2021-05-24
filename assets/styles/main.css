@@ -143,7 +143,7 @@ body {
   transition: background-color 0.2s ease;
 }
 
-#header .logo span {
+#header .logo > span {
   color: var(--white);
   transition: color 0.2s ease;
 }
