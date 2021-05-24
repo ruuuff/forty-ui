@@ -93,7 +93,7 @@
   }
 
   #contact section:last-child header {
-    margin-bottom: 0.18rem;
+    margin-bottom: 1.08rem;
   }
 
   footer .container {
@@ -106,7 +106,59 @@
 }
 
 @media (max-width: 980px) {
-  /*  */
+  .btn-container .btn {
+    padding: 0 2.24rem 0 2.3rem;
+  }
+
+  #header nav .menu svg {
+    margin: 0 1rem 0 0.5rem;
+  }
+
+  #first-section > article,
+  #first-section article:nth-child(4n - 1),
+  #first-section article:nth-child(4n - 2) {
+    width: 50%;
+  }
+
+  #contact .container {
+    flex-direction: column;
+  }
+
+  #contact section:first-child {
+    width: 100%;
+    padding: 6.4rem 0rem 6.4rem 0;
+    border-right: 0;
+    position: relative;
+  }
+
+  #contact section:last-child {
+    width: 100%;
+  }
+
+  #contact section:last-child ul li {
+    padding: 4.8rem 0;
+  }
+
+  #contact section:first-child::after,
+  #contact section:last-child ul li:not(:last-child)::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 1px;
+    background-color: var(--contact-border-color);
+  }
+
+  footer .socials ul li:not(:last-child) {
+    margin-right: 1.6rem;
+  }
+
+  footer .credits ul li:not(:last-child) {
+    margin-right: 1.28rem;
+    padding-right: 1.28rem;
+  }
 }
 
 @media (max-width: 740px) {
