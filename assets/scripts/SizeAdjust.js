@@ -1,64 +1,113 @@
 const Options = {
-  minWidth: 420,
+  minWidth: 480,
   maxWidth: 1365,
   measure: "rem"
 }
 
-const CSSSelectors = [
+const CSSDeclarations = [
   {
     selector: "h1",
     propAndValue: [
-      { property: "font-size", min: 0, max: 6 },
-      { property: "line-height", min: 0, max: 10 }
+      { property: "font-size", min: 3.2, max: 6 },
+      { property: "line-height", min: 5.28, max: 10 }
     ]
   },
 
   {
     selector: "h2, h3",
     propAndValue: [
-      { property: "font-size", min: 0, max: 3.2 },
-      { property: "line-height", min: 0, max: 5.3 }
+      { property: "font-size", min: 2.4, max: 3.2 },
+      { property: "line-height", min: 3.9, max: 5.3 }
     ]
   },
 
   {
     selector: "#banner .content p, #first-section > article p",
     propAndValue: [
-      { property: "font-size", min: 0, max: 1.3 },
-      { property: "line-height", min: 0, max: 2.1 },
-      { property: "letter-spacing", min: 0, max: 0.3 }
+      { property: "font-size", min: 1.1, max: 1.3 },
+      { property: "line-height", min: 1.8, max: 2.1 },
     ]
   },
 
   {
     selector: "#header a.logo, #header nav, .btn-container .btn, label",
     propAndValue: [
-      { property: "font-size", min: 0, max: 1.5 },
-      { property: "line-height", min: 0, max: 2.4 }
+      { property: "font-size", min: 1.28, max: 1.5 },
+      { property: "line-height", min: 2.1, max: 2.4 }
     ]
   },
 
   {
     selector: "#secondary-section .container p, input, textarea, #contact section:last-child .content, .icon",
     propAndValue: [
-      { property: "font-size", min: 0, max: 1.86 },
-      { property: "line-height", min: 0, max: 3.0 }
+      { property: "font-size", min: 1.6, max: 1.86 },
+      { property: "line-height", min: 2.6, max: 3.0 }
     ]
   },
 
   {
     selector: "#contact section:last-child header h3",
     propAndValue: [
-      { property: "font-size", min: 0, max: 2.5 },
-      { property: "line-height", min: 0, max: 4.1 }
+      { property: "font-size", min: 2, max: 2.5 },
+      { property: "line-height", min: 3.3, max: 4.1 }
     ]
   },
 
   {
     selector: "footer .credits ul",
     propAndValue: [
-      { property: "font-size", min: 0, max: 1.5 },
-      { property: "line-height", min: 0, max: 1.5 }
+      { property: "font-size", min: 1.28, max: 1.5 },
+      { property: "line-height", min: 1.28, max: 1.5 }
+    ]
+  },
+
+  {
+    selector: ".btn-container .btn",
+    propAndValue: [
+      { property: "height", min: 4.48, max: 5.2 },
+    ]
+  },
+
+  {
+    selector: ".icon",
+    propAndValue: [
+      { property: "width", min: 3.2, max: 3.7 },
+      { property: "height", min: 3.2, max: 3.7 },
+    ]
+  },
+
+  {
+    selector: ".btn-container .btn",
+    propAndValue: [
+      { property: "height", min: 4.4, max: 5.2 },
+    ]
+  },
+
+  {
+    selector: "#header .logo, #header nav .menu",
+    propAndValue: [
+      { property: "letter-spacing", min: 0.4, max: 0.45 },
+    ]
+  },
+
+  {
+    selector: ".btn-container .btn, #contact form label",
+    propAndValue: [
+      { property: "letter-spacing", min: 0.32, max: 0.37 },
+    ]
+  },
+
+  {
+    selector: "#banner .content p, #first-section > article p",
+    propAndValue: [
+      { property: "letter-spacing", min: 0.28, max: 0.32 },
+    ]
+  },
+  
+  {
+    selector: "#secondary-section .container p, #contact section:last-child .content p, footer .credits ul li",
+    propAndValue: [
+      { property: "letter-spacing", min: 0.04, max: 0.046 },
     ]
   },
 ]
@@ -84,20 +133,24 @@ const SizeAdjust = {
     return SizeAdjust.scale(Number(document.documentElement.clientWidth), Number(Options.minWidth), Number(Options.maxWidth), Number(min), Number(max))
   },
 
+  formatSize(sizeToFormat) {
+    return parseFloat(sizeToFormat.toFixed(3))
+  },
+
   innerStyles() {
     const style = document.querySelector('head style#size-adjust')
     style.innerHTML = ""
 
-    CSSSelectors.forEach(({ selector, propAndValue }) => {
+    CSSDeclarations.forEach(({ selector, propAndValue }, index) => {
       style.insertAdjacentHTML("beforeend", `${selector} {`)
 
       propAndValue.forEach(({ property, min, max }) => {
-        const size = SizeAdjust.callScaleWithParameters(min, max).toFixed(2)
+        const size = SizeAdjust.formatSize(SizeAdjust.callScaleWithParameters(min, max))
 
         style.insertAdjacentHTML("beforeend", `  ${property}: ${size + Options.measure};`)
       })
-      style.insertAdjacentHTML("beforeend", `}
-      `)
+      style.insertAdjacentHTML("beforeend", index !== CSSDeclarations.length - 1 ? `}
+      ` : `}`)
     })
   },
 }
