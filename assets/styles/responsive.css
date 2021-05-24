@@ -107,7 +107,7 @@
 
 @media (max-width: 980px) {
   .btn-container .btn {
-    padding: 0 2.24rem 0 2.3rem;
+    padding: 0 2.24rem 0 2.24rem;
   }
 
   #header nav .menu svg {
@@ -126,7 +126,7 @@
 
   #contact section:first-child {
     width: 100%;
-    padding: 6.4rem 0rem 6.4rem 0;
+    padding: 6.4rem 0rem;
     border-right: 0;
     position: relative;
   }
@@ -166,5 +166,74 @@
 }
 
 @media (max-width: 480px) {
-  /*  */
+  #header {
+    height: 4.4rem;
+  }
+
+  #header .logo {
+    padding: 0 1.28rem;
+  }
+
+  #header nav {
+    padding: 0 0.5rem 0 1rem;
+  }
+
+  #header .hide {
+    display: none;
+  }
+
+  #banner {
+    height: auto;
+    max-height: none;
+    min-height: 0px;
+    padding: 12.8rem 0 5.9rem;
+  }
+
+  #banner .content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.24rem;
+  }
+
+  #first-section > article,
+  #first-section article:nth-child(4n - 1),
+  #first-section article:nth-child(4n - 2) {
+    width: 100%;
+  }
+
+  #first-section > article {
+    padding: 4.8rem 2.4rem;
+  }
+
+  #secondary-section .container {
+    padding: 4.8rem 0;
+  }
+
+  #contact section:first-child {
+    padding: 4.8rem 0rem;
+  }
+
+  #contact form .input-group {
+    flex-direction: column;
+    gap: 2.6rem;
+  }
+
+  footer .container {
+    padding: 4.8rem 0;
+  }
+
+  footer .socials ul li:not(:last-child) {
+    margin-right: 1.2rem;
+  }
+
+  footer .credits ul {
+    flex-direction: column;
+  }
+
+  footer .credits ul li:not(:last-child) {
+    margin-bottom: 1rem;
+    margin-right: 0;
+    padding-right: 0;
+    border-right: 0;
+  }
 }
