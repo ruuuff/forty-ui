@@ -91,9 +91,7 @@ a.dotted-border-bottom:hover {
   color: var(--white);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.37rem;
   border: 2px solid var(--white);
-  height: 5.2rem;
   transition: color 0.2s ease, border 0.2s ease;
 }
 
@@ -140,7 +138,6 @@ body {
 #header .logo strong {
   background-color: var(--white);
   color: var(--dark-blue);
-  letter-spacing: 0.45rem;
   padding: 0 0.2rem 0 0.5rem;
   margin-right: 1rem;
   transition: background-color 0.2s ease;
@@ -148,7 +145,6 @@ body {
 
 #header .logo span {
   color: var(--white);
-  letter-spacing: 0.45rem;
   transition: color 0.2s ease;
 }
 
@@ -168,7 +164,7 @@ body {
 #header nav .menu {
   color: var(--white);
   text-transform: uppercase;
-  letter-spacing: 0.45rem;
+  letter-spacing: var(--letter-spacing-III);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,11 +189,13 @@ body {
   padding: 11.2rem 0 3.7rem;
   max-height: 93.3rem;
   min-height: 56rem;
+  height: 75vh;
   display: flex;
   align-items: center;
   background-image: url("../images/banner.jpg");
   background-size: cover;
   background-attachment: fixed;
+  background-position-x: 50%;
   position: relative;
   z-index: 1;
 }
@@ -374,11 +372,12 @@ main {
 #first-section > article p {
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: 0.32rem;
 }
 
 #first-section > article > a {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: 4;
@@ -404,7 +403,6 @@ main {
 
 #secondary-section .container p {
   font-weight: 300;
-  letter-spacing: 0.046rem;
   margin-bottom: 3.7rem;
 }
 
@@ -446,7 +444,6 @@ main {
   color: var(--white);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.37rem;
 }
 
 #contact form input {
@@ -518,8 +515,6 @@ main {
 }
 
 #contact section:last-child header .icon {
-  width: 3.7rem;
-  height: 3.7rem;
   background-color: var(--white);
   border-radius: 50%;
   display: flex;
@@ -559,8 +554,6 @@ footer .socials ul li:not(:last-child) {
 }
 
 footer .socials ul li a {
-  width: 3.7rem;
-  height: 3.7rem;
   background-color: var(--white);
   display: flex;
   align-items: center;
@@ -575,7 +568,6 @@ footer .credits ul {
 
 footer .credits ul li {
   color: var(--footer-text-color);
-  letter-spacing: 0.046rem;
 }
 
 footer .credits ul li:not(:last-child) {
