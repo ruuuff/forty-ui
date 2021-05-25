@@ -105,7 +105,7 @@ const CSSDeclarations = [
   },
   
   {
-    selector: "#secondary-section .container p, #contact section:last-child .content p, footer .credits ul li",
+    selector: "#secondary-section .container p, #contact section:last-child header h3, #contact section:last-child .content a, #contact section:last-child .content p, footer .credits ul li",
     propAndValue: [
       { property: "letter-spacing", min: 0.04, max: 0.046 },
     ]
