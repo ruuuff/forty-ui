@@ -120,6 +120,10 @@
     width: 50%;
   }
 
+  #contact section:last-child .content {
+    margin-left: 5.6rem;
+  }
+
   #contact .container {
     flex-direction: column;
   }
@@ -188,15 +192,20 @@
   }
 
   #first-section > article {
+    height: 25.6rem;
     padding: 4.8rem 2.4rem;
+  }
+
+  #contact section:first-child {
+    padding: 4.8rem 0rem;
+  }
+
+  footer .container {
+    padding: 4.8rem 0;
   }
 }
 
 @media (max-width: 530px) {
-  footer .container {
-    padding: 4.8rem 0;
-  }
-
   footer .credits ul {
     flex-direction: column;
   }
@@ -218,6 +227,11 @@
     padding: 12.8rem 0 5.9rem;
   }
 
+  #first-section > article {
+    height: 32rem;
+    padding: 4.8rem 2.4rem;
+  }
+
   #first-section > article,
   #first-section article:nth-child(4n - 1),
   #first-section article:nth-child(4n - 2) {
@@ -226,10 +240,6 @@
 
   #secondary-section .container {
     padding: 4.8rem 0;
-  }
-
-  #contact section:first-child {
-    padding: 4.8rem 0rem;
   }
 
   #contact form .input-group {
