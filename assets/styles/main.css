@@ -560,6 +560,11 @@ footer .socials ul li a {
   justify-content: center;
   border-radius: 50%;
   color: var(--dark-blue);
+  transition: background-color 0.2s ease;
+}
+
+footer .socials ul li a:hover {
+  background-color: var(--light-blue);
 }
 
 footer .credits ul {
