@@ -8,7 +8,7 @@ const CSSDeclarations = [
   {
     selector: "h1",
     propAndValue: [
-      { property: "font-size", min: 3.2, max: 6 },
+      { property: "font-size", min: 3.2, max: 6.066 },
       { property: "line-height", min: 5.28, max: 10 }
     ]
   },
@@ -105,7 +105,7 @@ const CSSDeclarations = [
   },
   
   {
-    selector: "#secondary-section .container p, #contact section:last-child header h3, #contact section:last-child .content a, #contact section:last-child .content p, footer .credits ul li",
+    selector: "h1, #secondary-section .container p, #contact section:last-child header h3, #contact section:last-child .content a, #contact section:last-child .content p, footer .credits ul li",
     propAndValue: [
       { property: "letter-spacing", min: 0.04, max: 0.046 },
     ]
