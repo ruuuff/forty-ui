@@ -727,10 +727,10 @@ nav#menu .close-btn {
   z-index: 1001;
 }
 
-nav#menu > div > .close-btn svg {
+nav#menu .close-btn svg {
   transition: stroke 0.2s ease-in-out;
 }
 
-nav#menu > div > .close-btn:hover svg {
+nav#menu .close-btn:hover svg {
   stroke: var(--light-blue);
 }
