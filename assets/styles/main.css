@@ -8,6 +8,7 @@
   --main-bg: rgba(42, 47, 74, 1);
   --input-bg: rgba(42, 47, 74, 1);
   --footer-text-color: rgba(244, 244, 255, 0.2);
+  --nav-background: rgba(36, 41, 67, 0.9);
 
   --contact-border-color: rgba(212, 212, 255, 0.1);
 
@@ -632,4 +633,104 @@ footer .credits ul li a.dotted-border-bottom {
 
 footer .credits ul li a.dotted-border-bottom:hover {
   border-bottom: 1px dotted transparent;
+}
+
+nav#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--nav-background);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  transition: opacity 0.35s ease, visibility ease 0.35s;
+}
+
+body > *:not(nav#menu) {
+  transition: filter 0.35s ease;
+}
+
+body.menu-active > *:not(nav#menu) {
+  filter: blur(0.93rem);
+}
+
+body.menu-active nav#menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+nav#menu > div {
+  max-width: 33.6rem;
+  width: 75%;
+  transform: rotateX(20deg);
+  transition: transform 0.35s ease-out;
+}
+
+body.menu-active nav#menu > div {
+  transform: rotateX(0);
+}
+
+nav#menu .links {
+  margin-bottom: 1.86rem;
+}
+
+nav#menu .links li:not(:last-child) {
+  border-bottom: 1px solid var(--contact-border-color);
+}
+
+nav#menu .links li a {
+  text-transform: uppercase;
+  color: var(--white);
+  font-weight: 700;
+  display: block;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+nav#menu .links li a:hover {
+  color: var(--light-blue);
+}
+
+nav#menu .buttons .btn {
+  width: 100%;
+}
+
+nav#menu .buttons .btn-container:first-child .btn {
+  background-color: var(--white);
+  color: var(--dark-blue);
+  transition: 0.2s ease;
+}
+
+nav#menu .buttons .btn-container:first-child .btn:hover {
+  background-color: var(--light-blue);
+}
+
+nav#menu .buttons .btn-container:not(:last-child) {
+  margin-bottom: 2.42rem;
+}
+
+nav#menu .close-btn {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 7.46rem;
+  height: 7.46rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  z-index: 1001;
+}
+
+nav#menu > div > .close-btn svg {
+  transition: stroke 0.2s ease-in-out;
+}
+
+nav#menu > div > .close-btn:hover svg {
+  stroke: var(--light-blue);
 }
