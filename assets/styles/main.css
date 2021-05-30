@@ -4,7 +4,7 @@
   font-size: 62.5%;
 
   --body-bg: rgba(36, 41, 67, 1);
-  --banner-bg: rgba(36, 41, 67, 0.85);
+  --banner-bg: rgba(36, 41, 67, 1);
   --main-bg: rgba(42, 47, 74, 1);
   --input-bg: rgba(42, 47, 74, 1);
   --footer-text-color: rgba(244, 244, 255, 0.2);
@@ -125,6 +125,32 @@ body {
   justify-content: space-between;
   height: 6rem;
   z-index: 1000;
+  opacity: 0;
+  transition: opacity 2.5s ease 0.75s;
+}
+
+body:not(.is-preload) #header {
+  opacity: 1;
+}
+
+#header.active {
+  position: fixed;
+  background-color: var(--banner-bg);
+  animation: transform 0.5s ease;
+}
+
+body:not(.is-preload) #header.active {
+  transition: opacity 0s ease 0s;
+}
+
+@keyframes transform {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
 }
 
 #header .logo {
@@ -209,11 +235,25 @@ body {
   height: 100%;
   background-color: var(--banner-bg);
   z-index: 2;
+  opacity: 1;
+  transition: opacity 2.5s ease 0.75s;
+}
+
+body:not(.is-preload) #banner::after {
+  opacity: 0.85;
 }
 
 #banner .container {
   position: relative;
   z-index: 10;
+  opacity: 0;
+  transform: translateX(-1rem);
+  transition: opacity 1.5s ease, transform 0.5s ease-in-out;
+}
+
+body:not(.is-preload) #banner .container {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 #banner header {
