@@ -11,6 +11,10 @@ const DOM = {
     const mainTriggerTop = DOM.main.getBoundingClientRect().top
 
     DOM.header.offsetHeight > mainTriggerTop ? DOM.header.classList.add('active') : DOM.header.classList.remove('active')
+  },
+
+  toggleMenu() {
+    DOM.body.classList.toggle('menu-active')
   }
 }
 
