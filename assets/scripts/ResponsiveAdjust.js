@@ -30,7 +30,7 @@ const CSSDeclarations = [
   },
 
   {
-    selector: "#header a.logo, #header nav, .btn-container .btn, label",
+    selector: "#header a.logo, #header nav, .btn-container .btn, label, nav#menu .links li a",
     propAndValue: [
       { property: "font-size", min: 1.28, max: 1.5 },
       { property: "line-height", min: 2.1, max: 2.4 }
@@ -77,13 +77,6 @@ const CSSDeclarations = [
   },
 
   {
-    selector: ".btn-container .btn",
-    propAndValue: [
-      { property: "height", min: 4.4, max: 5.2 },
-    ]
-  },
-
-  {
     selector: "#header .logo, #header nav .menu",
     propAndValue: [
       { property: "letter-spacing", min: 0.4, max: 0.45 },
@@ -91,7 +84,7 @@ const CSSDeclarations = [
   },
 
   {
-    selector: ".btn-container .btn, #contact form label",
+    selector: ".btn-container .btn, #contact form label, nav#menu .links li a",
     propAndValue: [
       { property: "letter-spacing", min: 0.32, max: 0.37 },
     ]
@@ -108,6 +101,13 @@ const CSSDeclarations = [
     selector: "h1, #secondary-section .container p, #contact section:last-child header h3, #contact section:last-child .content a, #contact section:last-child .content p, footer .credits ul li",
     propAndValue: [
       { property: "letter-spacing", min: 0.04, max: 0.046 },
+    ]
+  },
+
+  {
+    selector: "nav#menu .links li a",
+    propAndValue: [
+      { property: "line-height", min: 4.4, max: 5.9 },
     ]
   },
 ]
