@@ -115,7 +115,7 @@ const CSSDeclarations = [
 const ResponsiveAdjust = {
   createStyleEl() {
     const styleEl = document.createElement('style')
-    styleEl.setAttribute("id", "size-adjust")
+    styleEl.setAttribute("id", "responsive-adjust")
     document.querySelector('head').appendChild(styleEl)
     styleEl.insertAdjacentHTML("beforebegin", "<!-- Style injected by ResponsiveAdjust (github.com/ruuuff/responsive-adjust) -->")
   },
@@ -138,7 +138,7 @@ const ResponsiveAdjust = {
   },
 
   innerStyles() {
-    const style = document.querySelector('head style#size-adjust')
+    const style = document.querySelector('head style#responsive-adjust')
     style.innerHTML = ""
 
     CSSDeclarations.forEach(({ selector, propAndValue }, index) => {
