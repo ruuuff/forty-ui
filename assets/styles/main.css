@@ -127,11 +127,11 @@ body {
   height: 6rem;
   z-index: 1000;
   opacity: 0;
-  transition: opacity 2.5s ease 0.75s;
 }
 
 body:not(.is-preload) #header {
   opacity: 1;
+  transition: opacity 2.5s ease 0.75s;
 }
 
 #header.active {
