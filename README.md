@@ -13,6 +13,6 @@ Utilizei **HTML**, **CSS** e uma biblioteca **desenvolvida por mim**, com **Java
 # 🖥️ Resultado
 
 <div align="center">
-  <img alt="Forty UI" src="https://i.imgur.com/QgOPseB.png" width="450px"> 
+  <img alt="Forty UI" src="https://i.imgur.com/QgOPseB.png" width="500px"> 
   <p>Confira o resultado: <a href="https://forty-ui-ruuuff.netlify.app">Forty UI</a></p>
 </div>
