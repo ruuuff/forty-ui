@@ -1,5 +1,5 @@
 # 📚 Forty UI
-UI Clone da página <a href="https://html5up.net/uploads/demos/forty/">Forty</a> e suas animações utilizando HTML, CSS e JavaScript, com Design Responsivo e uma ferramenta desenvolvida por mim, em JavaScript, onde a utilizo para escalar o tamanho das fontes se baseando no viewport do usuário.
+UI Clone da página <a href="https://html5up.net/uploads/demos/forty/">Forty</a> e suas animações utilizando HTML, CSS e JavaScript, com Design Responsivo e uma ferramenta desenvolvida por mim, em JavaScript, onde a utilizo para escalar entre dois valores o tamanho das fontes se baseando no viewport do usuário.
 
 ## ✈️ Tecnologias
 - HTML
